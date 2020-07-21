@@ -1,0 +1,6 @@
+@article{song2020pip,
+  title={PiP: Planning-informed Trajectory Prediction for Autonomous Driving},
+  author={Song, Haoran and Ding, Wenchao and Chen, Yuxuan and Shen, Shaojie and Wang, Michael Yu and Chen, Qifeng},
+  journal={arXiv preprint arXiv:2003.11476},
+  year={2020}
+}
