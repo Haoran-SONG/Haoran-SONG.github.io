@@ -1,2 +1,2 @@
-# haoran-song.github.io
-This is my academic website. Go live on July 21, 2020.
+# Homepage
+This is my personal website: song-haoran.com. Go live on July 21, 2020.
