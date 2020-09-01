@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173182823-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-173182823-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AlphaSort</title>
+    <meta name="author" content="Haoran Song">
+    <meta name="description" content="Project page of Multi-Object Rearrangement with Monte Carlo Tree Search: A Case Study on Planar Nonprehensile Sorting, IROS 2020">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="mcts_logo.jpg">
+    <!-- Format -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="../format/app.css">
+    <link rel="stylesheet" href="../format/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="../format/app.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                Multi-Object Rearrangement with Monte Carlo Tree Search:<br />
+                A Case Study on Planar Nonprehensile Sorting<br />
+                <small>
+                    IROS 2020
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="http://song-haoran.com/">
+                            Haoran Song*
+                        </a>
+                        <br />HKUST
+                    </li>
+                    <li>
+                        <a href="http://www.csc.kth.se/~haustein/">
+                            Joshua A. Haustein*
+                        </a>
+                        <br />KTH
+                    </li>
+                    <li>
+                        <a href="http://weihao-yuan.com/">
+                            Weihao Yuan
+                        </a>
+                        <br />HKUST
+                    </li>
+                    <li>
+                        <a href="https://hangkaiyu.github.io/">
+                            Kaiyu Hang
+                        </a>
+                        <br />Yale
+                    </li>
+                    <li>
+                        <a href="https://seng.ust.hk/about/people/faculty/michael-yu-wang/">
+                            Michael Y. Wang
+                        </a>
+                        <br />HKUST
+                    </li>
+                    <li>
+                        <a href="https://www.csc.kth.se/~danik/">
+                            Danica Kragic
+                        </a>
+                        <br />KTH
+                    </li>
+                    <li>
+                        <a href="https://github.com/jastork">
+                            Johannes A. Stork
+                        </a>
+                        <br /> Örebro Univ.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                *denotes equal contribution
+            </div>
+        </div>
+
+        <!-- ##### Elements #####-->
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/1912.07024">
+                            <img src="mcts_paper_cover.png" height="120px"><br>
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/2oPhq1My5Uw">
+                            <img src="../images/youtube_icon.png" height="120px"><br>
+                                <h4><strong>Talk</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Haoran-SONG/box2d_sim_env">
+                            <img src="../images/github_icon.png" height="120px"><br>
+                                <h4><strong>Code (unprepared)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Example Results
+                </h3>
+                <video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="lighthouse_results.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div> -->
+
+        <!-- ##### Abstract #####-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    In this work, we address a planar non-prehensile sorting task.
+                    Here, a robot needs to push many densely packed objects belonging to different classes into a configuration where these classes are clearly separated from each other.
+                    To achieve this, we propose to employ Monte Carlo tree search equipped with a task-specific heuristic function.
+                    We evaluate the algorithm on various simulated and real-world sorting tasks.
+                    We observe that the algorithm is capable of reliably sorting large numbers of convex and non-convex objects, 
+                    as well as convex objects in the presence of immovable obstacles.             
+                </p>
+            </div>
+        </div>
+
+        
+        <!-- ##### Overview video #####-->
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+              <h3>
+                  Technical Video
+              </h3>
+              <div class="text-center">
+                  <div style="position:relative;padding-top:56.25%;">
+                      <iframe src="https://www.youtube.com/embed/2oPhq1My5Uw" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- ##### Architecture #####-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h3>
+                Architecture
+              </h3>
+              <p class="text-justify">
+                We demonstrate the sorting planner’s scheme for real-world execution. 
+              </p>
+              <img src="overall_architecture.png" class="img-responsive" alt="PiP Architecture overview"><br>
+            </div>
+        </div>
+        
+        <!-- ##### BibTex #####-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{song2019multi,
+    title={Multi-Object Rearrangement with Monte Carlo Tree Search: A Case Study on Planar Nonprehensile Sorting},
+    author={Song, Haoran and Haustein, Joshua A and Yuan, Weihao and Hang, Kaiyu and Wang, Michael Yu and Kragic, Danica and Stork, Johannes A},
+    journal={arXiv preprint arXiv:1912.07024},
+    year={2019}
+  }
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
