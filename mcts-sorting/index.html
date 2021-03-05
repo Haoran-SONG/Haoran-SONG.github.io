@@ -29,7 +29,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
     <script src="../format/app.js"></script>
-
+    <!-- Make all the links contained on this page to be opened with a new page. -->
+    <base target="_blank" />
   </head>
 
   <body>
@@ -94,7 +95,7 @@
 
         <div class="row">
             <div class="col-md-12 text-center">
-                *denotes equal contribution
+                <i>*denotes equal contribution</i>
             </div>
         </div>
 
@@ -125,6 +126,7 @@
         </div>
 
         <!-- ##### Abstract #####-->
+        <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -143,6 +145,7 @@
 
         
         <!-- ##### Technical video #####-->
+        <hr>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
               <h3>
@@ -158,6 +161,7 @@
         </div>
         
         <!-- ##### Motivation #####-->
+        <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
             <h3>
@@ -192,6 +196,7 @@
         </div>
 
         <!-- ##### Architecture #####-->
+        <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -218,6 +223,7 @@
         </div>
         
         <!-- ##### Experiments #####-->
+        <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -232,20 +238,22 @@
         </div>
         
         <!-- ##### BibTex #####-->
+        <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     BibTeX
                 </h3>
-                <div class="form-group col-md-10 col-md-offset-1">
-                    <textarea id="bibtex" class="form-control" readonly>
+                <div class="row align-items-center">
+                    <div class="col py-3">
+                        <pre class="border">
 @article{song2019multi,
     title={Multi-Object Rearrangement with Monte Carlo Tree Search: A Case Study on Planar Nonprehensile Sorting},
     author={Song, Haoran and Haustein, Joshua A and Yuan, Weihao and Hang, Kaiyu and Wang, Michael Yu and Kragic, Danica and Stork, Johannes A},
     journal={arXiv preprint arXiv:1912.07024},
     year={2019}
-  }
-                    </textarea>
+  }</pre>
+                    </div>
                 </div>
             </div>
         </div>

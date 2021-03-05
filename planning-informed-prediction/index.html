@@ -29,7 +29,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
     <script src="../format/app.js"></script>
-
+    <!-- Make all the links contained on this page to be opened with a new page. -->
+    <base target="_blank" />
   </head>
 
   <body>
@@ -60,7 +61,7 @@
                         <br />HKUST
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://scholar.google.com/citations?user=QuoHHFMAAAAJ&hl=zh-CN&oi=sra">
                             Yuxuan Chen
                         </a>
                         <br />USTC
@@ -132,6 +133,7 @@
         </div> -->
 
         <!-- ##### Abstract #####-->
+        <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -154,6 +156,7 @@
 
         
         <!-- ##### Overview video #####-->
+        <hr>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
               <h3>
@@ -168,6 +171,7 @@
         </div>
 
         <!-- ##### Motivation & Key idea #####-->
+        <hr>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
               <h3>
@@ -206,6 +210,7 @@
         </div>
 
         <!-- ##### Architecture #####-->
+        <hr>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
               <h3>
@@ -224,21 +229,36 @@
         </div>
         
         <!-- ##### BibTex #####-->
+        <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     BibTeX
                 </h3>
-                <div class="form-group col-md-10 col-md-offset-1">
+                <!-- <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
-@article{song2020pip,
-  title={PiP: Planning-informed Trajectory Prediction for Autonomous Driving},
-  author={Song, Haoran and Ding, Wenchao and Chen, Yuxuan and Shen, Shaojie and Wang, 
-        Michael Yu and Chen, Qifeng},
-  journal={arXiv preprint arXiv:2003.11476},
-  year={2020}
-}
+                    @inproceedings{song2020pip,
+                        title={PiP: Planning-informed Trajectory Prediction for Autonomous Driving},
+                        author={Song, Haoran and Ding, Wenchao and Chen, Yuxuan and Shen, Shaojie and Wang, Michael Yu and Chen, Qifeng},
+                        booktitle={European Conference on Computer Vision},
+                        pages={598--614},
+                        year={2020},
+                        organization={Springer}
+                    }
                     </textarea>
+                </div> -->
+                <div class="row align-items-center">
+                    <div class="col py-3">
+                        <pre class="border">
+@inproceedings{song2020pip,
+    title={PiP: Planning-informed Trajectory Prediction for Autonomous Driving},
+    author={Song, Haoran and Ding, Wenchao and Chen, Yuxuan and Shen, Shaojie and Wang, Michael Yu and Chen, Qifeng},
+    booktitle={European Conference on Computer Vision},
+    pages={598--614},
+    year={2020},
+    organization={Springer}
+}</pre>
+                    </div>
                 </div>
             </div>
         </div>
