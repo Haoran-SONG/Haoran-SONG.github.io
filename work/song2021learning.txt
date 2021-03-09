@@ -1,0 +1,6 @@
+@article{song2021learning,
+      title={Learning to Predict Vehicle Trajectories with Model-based Planning}, 
+      author={Haoran Song and Di Luan and Wenchao Ding and Michael Yu Wang and Qifeng Chen},
+      journal={arXiv preprint arXiv:2103.04027},
+      year={2021}
+}
