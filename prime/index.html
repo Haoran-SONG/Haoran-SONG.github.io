@@ -91,7 +91,7 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="PRIME_pre.pdf">
+                            <a href="PRIME_preview.pdf">
                             <img src="PRIME_cover.png" height="120px"><br>
                                 <h4><strong>Paper</strong></h4>
                             </a>
@@ -223,8 +223,8 @@
                 As the path-based Frenet coordinate is used in our dual spatial representation, P2T, P2F, and A2A operate for each path, 
                 while F2F fuses all the future trajectories processed by P2F to obtain a global understanding for the reachable space. 
                 
-                Subsequently, each feasible trajectory \(\mathcal{T}_{i,j}\) could query its track tensor \(\mathbf{X}_i(\mathbf{s}_{tar})\) from P2T, 
-                interaction tensor \(\mathbf{Y}_i(\mathbf{s}_{tar})\) from A2A and future tensor \(\mathbf{Z}(\mathcal{T}_{i,j})\) from F2F, 
+                Subsequently, each feasible trajectory \(\mathcal{T}_{j,k}\) could query its track tensor \(\mathbf{X}_j(\mathbf{s}_{tar})\) from P2T, 
+                interaction tensor \(\mathbf{Y}_j(\mathbf{s}_{tar})\) from A2A and future tensor \(\mathbf{Z}(\mathcal{T}_{j,k})\) from F2F, 
                 and it is scored by feeding the concatenation of these tensors to fully-connected layers. 
                 Finally, the evaluator ranks all feasible future trajectories in \(\mathcal{T}\) by scoring and outputs a final set of \(K\) predicted trajectories.  
               </p>
