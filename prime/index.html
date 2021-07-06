@@ -287,45 +287,108 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    More Comparisons
+                    [Supp. 1] Comparison with Fully Learning-based Prediction
                 </h3>
                 <p class="text-justify">
-                    Qualitative comparisons between ours (left) and LaneGCN (right) on the Argoverse validation set, with the same coloring scheme. 
-                    Here, we use the current state-of-the-art method, LaneGCN, 
-                    as a representative for typical prediction models that generate unconstrained trajectories by neural networks.
-                    <br></br>
-                    We show some common failures, including kinematically and environmentally infeasible predictions.
-                    Due to kinematic constraints, vehicles cannot take a turn suddenly at high speed (1st row), or reverse their moving directions (2nd row). 
-                    Also, the prediction results of turning with across lane boundaries (3rd row), or heading towards reverse lanes (4th row) are incompliant with environmental constraints.
-                    Such infeasible predictions would cause redundant burdens for an AV to make decisions and motion plans.
-                    By contrast, the future trajectory set (<font style="color:blue;font-weight:bold">blue</font>) produced by our model-based generator 
-                    is explicitly regularized by kinematic and environmental constraints, and thereupon, makes accurate and reasonable future predictions (<font style="color:red;font-weight:bold">red</font>).
+                    Compared with the mainstream learning-based methods that generate unconstrained trajectory predictions by neural networks, 
+                    the main difference of our proposed PRIME framework is to explicitly constrain the prediction space and thereby ensure trajectory feasibility.  
+                    Here, we use LaneGCN as a representative for the typical fully learning-based prediction models, 
+                    and among the current state-of-the-art methods, it is open-source. 
+                    We demonstrate some common failures of kinematically and environmentally infeasible predictions in the following.                    
                 </p>
-                <div class="row">
-                    <div class="columns is-multiline is-centered">
-                      <table style="border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tr>
-                          <td style="padding:0 5px 0 5px; "> <img src="compare/1908_11.png" height="350" width="350" > </td>
-                          <td style="padding:0 5px 0 5px;"> <img src="compare/1908_22.png" height="350" width="350" ><br> </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0 5px 0 5px; "> <img src="compare/29042_1.png" height="350" width="350" > </td>
-                            <td style="padding:0 5px 0 5px;"> <img src="compare/29042_2.png" height="350" width="350" ><br> </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0 5px 0 5px; "> <img src="compare/5155_1.png" height="350" width="350" > </td>
-                            <td style="padding:0 5px 0 5px;"> <img src="compare/5155_2.png" height="350" width="350" ><br> </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0 5px 0 5px; "> <img src="compare/3130_1.png" height="350" width="350" > </td>
-                            <td style="padding:0 5px 0 5px;"> <img src="compare/3130_2.png" height="350" width="350" ><br> </td>
-                        </tr>
-                      </table>
-                    </div>
-                </div>
+                <img src="supp/fig6.JPG" width="650" class="img-responsive" alt="The effect of kinematic constraints"><br>
+
+                <p class="text-justify">
+                    Due to kinematic constraints, vehicles cannot take a sudden turn at high speed (1st-row in Fig. 6), 
+                    or reverse the moving direction (2nd-row in Fig. 6). 
+                    Also, the prediction results of turning with across lane boundaries (1st-row in Fig.7), 
+                    or heading towards reverse lanes (2nd-row in Fig.7) are incompliant with environmental constraints.
+                    Moreover, the counter-intuitive bidirectional trajectories predicted by LaneGCN (2nd-row in Fig.7) 
+                    also reveal that the fully learning-based prediction relies on relative long-range tracks for regressing trajectories, 
+                    but it may degrade under short-range tracks.
+                </p>
+                <img src="supp/fig7.JPG"  width="650" class="img-responsive" alt="The effect of environmental constraints"><br>     
+                
+                <p class="text-justify">
+                    In some of the above examples, although it looks PRIME and LaneGCN show comparable performance when evaluated by minADE\(_6\) and minFDE\(_6\), 
+                    their impacts on the downstream planning differ a lot. 
+                    The infeasible trajectories generated by LaneGCN bring massive uncertainty in the predicted future states, 
+                    which would cause redundant burdens for an autonomous vehicle to make decisions and motion plans.
+                    Especially in dense traffic where multiple surrounding vehicles need to be predicted, 
+                    the negative impact of infeasible predictions would be further aggravated.
+                    By contrast, PRIME regularizes the future trajectory space (<font style="color:blue;font-weight:bold">blue</font>) by given constraints and thus makes accurate and reasonable future predictions (<font style="color:red;font-weight:bold">red</font>).                    
+                </p>
             </div>
         </div>
+
+
+        <!-- ##### Defect #####-->
+        <hr>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    [Supp. 2] Impacts Caused by Defect Data
+                </h3>
+                <p class="text-justify">
+                    Although Argoverse is one of the most recognized benchmarks for trajectory prediction due to its high-quality trajectory and map annotation, 
+                    some of its ground truth trajectories are not completely correct. 
+                    The common issues result from the tracking method used for annotating the data, 
+                    including position oscillation (Fig. 8(a)) and id switch (Fig. 8(b)) that the ground truth trajectory is suddenly switched to a neighboring agent.
+                    Such defect cases would lead to worse performance indicators (ADE/FDE-based metrics) of our method in the quantitative evaluation, 
+                    but it is evident that the smooth trajectories predicted by PRIME are more realistic and reasonable.                   
+                </p>
+                <img src="supp/fig8.JPG" width="650" class="img-responsive" alt="Qualitative results under cases with defective ground truth"><br>
+            </div>
+        </div>
+
+
+        <!-- ##### Failure #####-->
+        <hr>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    [Supp. 3] Failure Cases
+                </h3>
+                <p class="text-justify">
+                    We demonstrate the failure cases of our method on the Argoverse validation set in Fig. 9. 
+                    The failures are mostly related to the estimation deviation for the target vehicle's current state \(\mathbf{s}_{tar}^0\).  
+                    Although the sampling-based strategy in our generator could compensate for inaccurate state estimation to some extent, 
+                    estimating the heading and velocity from sequences of centroid positions would be intractable when there exists serious data noise. 
+                    For example, the position oscillation of a short-distance history track would make the heading direction hard to estimate, as shown in Fig. 9(a). 
+                    As a result, the ground truth trajectory locates out of the resulted prediction space's span range. 
+                    When the position sequence vibrates too much, the accuracy of velocity estimation would even be affected. 
+                    As exemplified in Fig. 9(b), the future trajectory space does not cover the ground truth trajectory due to the inaccurate estimation for the target's low velocity, 
+                    leading to a relatively large displacement error in the prediction results.          
+                </p>
+                <img src="supp/fig9.JPG" width="650" class="img-responsive" alt="Qualitative analysis for failure cases"><br>
+                <p class="text-justify">
+                    Nonetheless, the accuracy of state estimation could be improved by incorporating more information.  
+                    For instance, the vehicle's bounding box given by detection provides geometry information in addition to discrete positions, 
+                    which would enable more robust and accurate state estimation for prediction targets.                 
+                </p>
+            </div>
+        </div>
+
         
+        <!-- ##### Runtime #####-->
+        <!-- <hr>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    [Supp] Runtime Analysis
+                </h3>
+                <p class="text-justify">
+                    The inference frequency of our prediction framework depends on the scene complexity, sampling density, and computing power. 
+                    Running with Intel i7-7820X, the generation of a single trajectory with a single thread spends <b>0.1~0.2 ms</b> on average. 
+                    With each trajectory sample produced independently, the model-based trajectory generator could be highly parallelized to provide full coverage to the future prediction space with satisfactory real-time performance.
+                    For the learning-based evaluator, it is implemented by a lightweight network with only 1.02 million parameters. 
+                    Its inference time on NVIDIA 2080TI is <b>8~12 ms</b>.
+                    Overall, the whole framework of PRIME could well satisfy the real-time requirements for autonomous driving.
+                </p>
+            </div>
+        </div> -->
+
+
         <!-- ##### BibTex #####-->
         <hr>
         <div class="row">
