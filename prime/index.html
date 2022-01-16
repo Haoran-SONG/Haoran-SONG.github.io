@@ -140,9 +140,7 @@
                     We conduct experiments on the large-scale Argoverse Motion Forecasting Benchmark. Our PRIME outperforms state-of-the-art methods in <b>prediction accuracy</b>, <b>feasibility</b>, and <b>robustness under imperfect tracking</b>. 
                     <br />
                     <br />
-                    (PRIME had been <b>ranked 1st</b> on the
-                    <a href="https://eval.ai/web/challenges/challenge-page/454/leaderboard/1279#leaderboardrank-1">Argoverse Motion Forecasting Leaderboard</a>
-                    until March 2021.)
+                    <font style="color:red;font-weight:bold"> (PRIME had been ranked 1st on the Argoverse Motion Forecasting Challenge until March 2021.)</font>
                 </p>
             </div>
         </div>
@@ -386,6 +384,10 @@
                     For the learning-based evaluator, it is implemented by a lightweight network with only 1.02 million parameters. 
                     Its inference time on NVIDIA 2080TI is <b>8~12 ms</b>.
                     Overall, the whole framework of PRIME could well satisfy the real-time requirements for autonomous driving.
+                    <br />
+                    <br />
+                    <font style="color:red;font-weight:bold">(Note: The current C++ implementation of the model-based part has a 1/10 runtime 
+                        of the previous version implemented by Python. i.e., sampling 1k trajectories on single thread costs ~10ms.)</font>
                 </p>
             </div>
         </div>
